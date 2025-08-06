@@ -18,7 +18,7 @@
     "href": "about.html",
     "title": "About me",
     "section": "",
-    "text": "Introduction\nMethods\nData Source\nPackages used\nApproach\nResults\nDiscussion"
+    "text": "Introduction\nHello! My name is Valera.\nI am a sophmore at Dominican University working on my Mathematics and Mechanical Engineering degree."
   },
   {
     "objectID": "readme.html",
@@ -109,20 +109,13 @@
     "href": "index.html",
     "title": "quartoCourseBlog",
     "section": "",
-    "text": "Hello!\nWelcome to my website showing off my R portfolio\nI created this website as part of a course at Dominican. It was created with R and Quarto in RStudio.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy First post\n\n\n\ndata_science_sample_project\n\n\n\n\n\n\n\n\n\nAug 6, 2025\n\n\nValeria Hernandez-Lozano\n\n\n\n\n\n\n\n\n\n\n\n\nExample assignment\n\n\n\ngoals\n\ngeneral\n\n\n\n\n\n\n\n\n\nOct 21, 2022\n\n\nMatt Crump\n\n\n\n\n\nNo matching items"
+    "text": "Hello!\nWelcome to my website showing off my R portfolio\nI created this website as part of an R programming course at Dominican. It was created with R and Quarto in RStudio.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNightmare patterns in kids ages 4-10\n\n\n\ndata_science_sample_project\n\n\n\n\n\n\n\n\n\nAug 6, 2025\n\n\nValeria Hernandez-Lozano\n\n\n\n\n\n\n\n\n\n\n\n\nExample assignment\n\n\n\ngoals\n\ngeneral\n\n\n\n\n\n\n\n\n\nOct 21, 2022\n\n\nMatt Crump\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/my_first_post/index.html",
     "href": "posts/my_first_post/index.html",
-    "title": "My First post",
+    "title": "Nightmare patterns in kids ages 4-10",
     "section": "",
-    "text": "This is an example first post. Whatever you write here will appear inside your post.\nIt is possible to write lists:\nAnd make headers"
-  },
-  {
-    "objectID": "posts/my_first_post/index.html#this-is-a-second-level-heading",
-    "href": "posts/my_first_post/index.html#this-is-a-second-level-heading",
-    "title": "My First post",
-    "section": "This is a second level heading",
-    "text": "This is a second level heading\nYou can include images, and many other kinds of content.\nIf you are using the visual editor in Rstudio you can drag images onto the editor to insert them into the document. Otherwise, you need to place the image inside of the folder for this post, and then you can insert it to your post directly, like this:\n\nThe first image in a blog post will also be used on the listings page."
+    "text": "Introduction\n\nQuestions + Predictions:\n\nHow frequently do nightmares occur among different age groups?\nI predict that kids who are older (&gt;7) will experience nightmares more frequently than those who are younger (&lt;6).\nIs there a difference in nightmare frequency between Males and Females, does this difference have anything to do with Psychological pressure/ issues at school?\nI predict that there wont be a significant difference in nightmare frequency between genders and therefore not much of a difference in psychological problems at school.\nIs there a correlation between nightmare frequency, and sleeping patterns?\nIs there a correlation between nightmare frequency, content and recent life changes?\nIs there a correlation between sleeping environment and nightmare content?\nHow does the severity of psychological issues experianced bt the child impact the severity/content of their dream?\n\n\n\n\nApproach\n\n\nTools\n\n\nPredictions\n\n\nResults\n\n\nDisscussion"
   }
 ]

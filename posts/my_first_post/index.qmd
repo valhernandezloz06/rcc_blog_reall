@@ -1,26 +1,38 @@
 ---
-title: "My First post"
+title: "Nightmare patterns in kids ages 4-10"
 author: "Valeria Hernandez-Lozano"
 date: "2025-08-06"
 categories: [data_science_sample_project]
 ---
 
-This is an example first post. Whatever you write here will appear inside your post.
+![](/images/nightmares.jpg){width="215" height="20"}
 
-It is possible to write lists:
+Are children's nightmares a reflection of their real life and psychological experiences or is their brain playing games. In this project I analyzed a data set that includes variables such as age, gender, nightmare frequency and content, sleep patterns, recent life changes, parental observations, psychological issues at school and other factor that showcase the correlation and reasoning behind children nightmares between the ages 4-10.
 
-1.  One
-2.  Two
-3.  Three
+# Questions + Predictions:
 
-And make headers
+1.  **How frequently do nightmares occur among different age groups?**
 
-## This is a second level heading
+    *I predict that kids who are older (\>7) will experience nightmares more frequently than those who are younger (\<6).*
 
-You can include images, and many other kinds of content.
+2.  **Is there a difference in nightmare frequency between Males and Females, does this difference have anything to do with Psychological pressure/ issues at school?**
 
-If you are using the visual editor in Rstudio you can drag images onto the editor to insert them into the document. Otherwise, you need to place the image inside of the folder for this post, and then you can insert it to your post directly, like this:
+    *I predict that there wont be a significant difference in nightmare frequency between genders and therefore not much of a difference in psychological problems at school.*
 
-![](thumbnail.jpg)
+3.  Is there a correlation between nightmare frequency, and sleeping patterns?
 
-The first image in a blog post will also be used on the listings page.
+4.  Is there a correlation between nightmare frequency, content and recent life changes?
+
+5.  Is there a correlation between sleeping environment and nightmare content?
+
+6.  How does the severity of psychological issues experianced bt the child impact the severity/content of their dream?
+
+# Approach
+
+# Tools
+
+# Predictions
+
+# Results
+
+# Disscussion
