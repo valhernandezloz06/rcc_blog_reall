@@ -1,8 +1,8 @@
 ---
 title: "My First post"
-author: "Matt Crump"
-date: "2022-10-21"
-categories: [goals,general]
+author: "Valeria Hernandez-Lozano"
+date: "2025-08-06"
+categories: [data_science_sample_project]
 ---
 
 This is an example first post. Whatever you write here will appear inside your post.
