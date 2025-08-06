@@ -16,6 +16,7 @@ about:
 ---
 
 ```{r}
+#| include: false
 #will be able to use as if it was R 
 library(ggplot2)
 ggplot(mpg,aes(x = hwy, y = cyl)) + geom_point()

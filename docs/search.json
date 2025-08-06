@@ -18,7 +18,7 @@
     "href": "about.html",
     "title": "About me",
     "section": "",
-    "text": "#will be able to use as if it was R \nlibrary(ggplot2)\nggplot(mpg,aes(x = hwy, y = cyl)) + geom_point()\n\n\n\n\n\n\n\n\n\nIntroduction\nMethods\nData Source\nPackages used\nApproach\nResults\nDiscussion"
+    "text": "Introduction\nMethods\nData Source\nPackages used\nApproach\nResults\nDiscussion"
   },
   {
     "objectID": "readme.html",
