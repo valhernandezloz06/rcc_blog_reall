@@ -12,8 +12,6 @@ page-layout: full
 title-block-banner: true
 ---
 
-Hello!
+Welcome to my website showing off my R portfolio!
 
-Welcome to my website showing off my R portfolio
-
-I created this website as part of an R programming course at Dominican. It was created with R and Quarto in RStudio.
+I created this website using R and Quarto in RStudio as part of an R programming course at Dominican.

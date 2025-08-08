@@ -9,7 +9,7 @@
 <meta name="author" content="Valeria Hernandez-Lozano">
 <meta name="dcterms.date" content="2025-08-06">
 
-<title>Nightmare patterns in kids ages 4-10 – Valeria’s R portfolio</title>
+<title>Nightmare patterns in Children – Valeria’s R portfolio</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -116,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Nightmare patterns in kids ages 4-10</h1>
+      <h1 class="title">Nightmare patterns in Children</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">data_science_sample_project</div>
               </div>
@@ -155,39 +190,193 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><img src="../../images/nightmares.jpg" width="215" height="20"></p>
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<section id="questions-predictions" class="level4">
-<h4 class="anchored" data-anchor-id="questions-predictions">Questions + Predictions:</h4>
-<ol type="1">
-<li><p><strong>How frequently do nightmares occur among different age groups?</strong></p>
-<p><em>I predict that kids who are older (&gt;7) will experience nightmares more frequently than those who are younger (&lt;6).</em></p></li>
-<li><p><strong>Is there a difference in nightmare frequency between Males and Females, does this difference have anything to do with Psychological pressure/ issues at school?</strong></p>
-<p><em>I predict that there wont be a significant difference in nightmare frequency between genders and therefore not much of a difference in psychological problems at school.</em></p></li>
-<li><p>Is there a correlation between nightmare frequency, and sleeping patterns?</p></li>
-<li><p>Is there a correlation between nightmare frequency, content and recent life changes?</p></li>
-<li><p>Is there a correlation between sleeping environment and nightmare content?</p></li>
-<li><p>How does the severity of psychological issues experianced bt the child impact the severity/content of their dream?</p></li>
-</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/nightmareSleeping.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Nightmares are common phenomena that occur in early childhood. They are described as vivid and disturbing dreams that occur during the Rapid Eye Movement (REM) stage of sleep. It is often implied that these serve as an opening into a child’s creativity and thought process, as well as their emotional and psychological development.</p>
+<p>In this project, I analyzed a data set in order to reveal the correlations and causes of nightmares in children aged 4 to 10. It is important to analyze this data to be aware of the psychological well-being of children during this early age of their development.</p>
+<section id="research-questions-hypothesis" class="level1">
+<h1><strong>Research Questions &amp; Hypothesis</strong></h1>
+<section id="how-frequently-do-nightmares-occur-across-different-ages-4-10" class="level5">
+<h5 class="anchored" data-anchor-id="how-frequently-do-nightmares-occur-across-different-ages-4-10"><strong>How frequently do nightmares occur across different ages (4-10)?</strong></h5>
+<p><em><strong>Hypothesis</strong>:</em> Children over the age of 7 will experience nightmares more frequently than those under the age of 6, due to increased cognitive awareness, understanding, and emotional development.</p>
+</section>
+<section id="are-gender-differences-in-nightmare-frequency-linked-to-psychological-stress-in-school" class="level5">
+<h5 class="anchored" data-anchor-id="are-gender-differences-in-nightmare-frequency-linked-to-psychological-stress-in-school">Are gender differences in nightmare frequency linked to psychological stress in school<strong>?</strong></h5>
+<p><em><strong>Hypothesis</strong>:</em> There won’t be a significant difference in both nightmare frequency between boys and girls, and in psychological challenges at school, due to the young age of the individuals.</p>
+</section>
+<section id="is-there-a-relationship-between-recent-life-changes-and-nightmare-content" class="level5">
+<h5 class="anchored" data-anchor-id="is-there-a-relationship-between-recent-life-changes-and-nightmare-content"><strong>Is there a relationship between recent life changes and nightmare content?</strong></h5>
+<p><em><strong>Hypothesis</strong>:</em> Recent life events may cause stress or intense emotional and potentially traumatic responses, which may influence the emotional themes and content of their dreams. Specifically, I predict that those who experience their parents’ divorce may dream about losing someone, and those who experience moving houses may dream about being alone and lost.</p>
+</section>
+<section id="is-there-a-correlation-between-nightmare-frequency-and-sleeping-patterns" class="level5">
+<h5 class="anchored" data-anchor-id="is-there-a-correlation-between-nightmare-frequency-and-sleeping-patterns"><strong>Is there a correlation between nightmare frequency and sleeping patterns?</strong></h5>
+<p><em><strong>Hypothesis</strong>:</em> Children with irregular sleep schedules will experience nightmares more frequently, particularly on a weekly basis, due to a loss of emotional processing during REM sleep.</p>
 </section>
 </section>
 <section id="approach" class="level1">
 <h1>Approach</h1>
+<p>The data set used in this analysis investigates the nightmares experienced by children aged 4 to 10 and their potential psychological effects. It was published by Atif Masih, a lecturer at Govt Islamia Graduate College, and was last updated in 2024. The data set has 12 variables (columns). These include 8 whose data is collected categorically: Age, Gender, Nightmare Frequency, Nightmare Content, Sleep Patterns, recent life changes, Sleep Environment, Parental observations, and 4 whose data is collected numerically: Psychological issues at school, Has Recent life Changes, Irregular Sleep Pattern, and Fear-Related Nightmares and there are a total of 20,000 participants ages 4-10.</p>
 </section>
 <section id="tools" class="level1">
 <h1>Tools</h1>
-</section>
-<section id="predictions" class="level1">
-<h1>Predictions</h1>
+<p>This analysis was conducted using <strong>RStudio</strong> in <strong>Posit.Cloud; GitHub</strong> and <strong>R</strong>, a programming language used for analysis, data visualization, and modeling. The data set was imported using the <strong>readr</strong> package and the <strong>read.csv()</strong> function, allowing access to the data set stored in CSV format.</p>
+<p>To manipulate and visualize the data, I used packages from the <strong>tidyverse</strong>, such as <strong>ggplot2,</strong> for creating visualizations. The analysis included density plots, histograms, and bar charts, and data cleaning was conducted by filtering out N/A and Blank/Incomplete data using conditions like <strong>!is.na() and != ““</strong>.</p>
+<p>Visual differences between my variables were made using <strong>color</strong> and <strong>fill</strong> aesthetics, and in certain graphs, I applied <strong>facet_wrap()</strong> to split plots into separate groups, allowing for a better comparison between specific conditions. Finally, to enhance the overall appearance of the plots, I included themes, titles, and appropriate x and y-axis names using <strong>labs() and theme_().</strong></p>
 </section>
 <section id="results" class="level1">
 <h1>Results</h1>
+<section id="how-frequently-do-nightmares-occur-across-different-ages-4-10-1" class="level5">
+<h5 class="anchored" data-anchor-id="how-frequently-do-nightmares-occur-across-different-ages-4-10-1"><strong>How frequently do nightmares occur across different ages (4-10)?</strong></h5>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ stringr   1.5.1
+✔ forcats   1.0.0     ✔ tibble    3.3.0
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.1.0     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>nightmare_dataset <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"nightmare_dataset.csv"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>nightmare <span class="ot">&lt;-</span> nightmare_dataset <span class="sc">|&gt;</span> <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(Age))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>nightmare <span class="ot">&lt;-</span> nightmare_dataset <span class="sc">|&gt;</span> <span class="fu">filter</span>(Age <span class="sc">&lt;=</span> <span class="dv">10</span> <span class="sc">&amp;</span> Nightmare.Frequency <span class="sc">!=</span> <span class="st">""</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(nightmare, <span class="fu">aes</span>(</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> Age, <span class="at">color =</span> Nightmare.Frequency, </span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">fill =</span> Nightmare.Frequency)) <span class="sc">+</span> </span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span> <span class="fu">labs</span>(</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Nightmare Frequency In Children Ages (4-10)"</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Age (4-10)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><em>Weekly nightmares are most common among children aged 4-5, while monthly and bi-weekly nightmares become more common between the ages of 7-10. This suggests that nightmares are less common as children grow older.</em></p>
 </section>
-<section id="disscussion" class="level1">
-<h1>Disscussion</h1>
+<section id="are-gender-differences-in-nightmare-frequency-linked-to-psychological-stress-in-school-1" class="level5">
+<h5 class="anchored" data-anchor-id="are-gender-differences-in-nightmare-frequency-linked-to-psychological-stress-in-school-1">Are gender differences in nightmare frequency linked to psychological stress in school<strong>?</strong></h5>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>nightmare_dataset <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"nightmare_dataset.csv"</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>nightmareGen <span class="ot">&lt;-</span> nightmare_dataset <span class="sc">|&gt;</span> <span class="fu">filter</span>(Nightmare.Frequency <span class="sc">!=</span> <span class="st">""</span> <span class="sc">&amp;</span> Gender <span class="sc">!=</span> <span class="st">""</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> nightmareGen , </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Psychological.Problems.at.School)) <span class="sc">+</span> </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">color =</span> Nightmare.Frequency)) <span class="sc">+</span> </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Gender) <span class="sc">+</span> <span class="fu">labs</span>(</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Nightmare Frequency Vs. Psychological Problems at school in Boys and Girls"</span>, <span class="at">x =</span> <span class="st">"Psychological Problems at School Scale (1-35)"</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 1616 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><em>Girls with higher Psychological problems at school show a higher count of weekly nightmares. In comparison, boys show a less notable change across the scale with a huge decrease in nightmares when approaching level 35.</em></p>
+<p><em>In terms of monthly nightmares, both genders show similar patterns across the scale, with girls showing a higher count when approaching level 35 than boys.</em></p>
+</section>
+<section id="is-there-a-relationship-between-recent-life-changes-and-nightmare-content-1" class="level5">
+<h5 class="anchored" data-anchor-id="is-there-a-relationship-between-recent-life-changes-and-nightmare-content-1"><strong>Is there a relationship between recent life changes and nightmare content?</strong></h5>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>nightmare_dataset <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"nightmare_dataset.csv"</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>nightmare_dataset_filtered <span class="ot">&lt;-</span> nightmare_dataset <span class="sc">|&gt;</span> <span class="fu">filter</span>(Recent.Life.Changes <span class="sc">!=</span> <span class="st">""</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> nightmare_dataset_filtered, <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> Recent.Life.Changes, </span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">fill =</span> Nightmare.Content )) <span class="sc">+</span> </span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span> </span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Recent Life Changes vs. Nightmare Content"</span>, </span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Recent Life Changes"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><em>There is a suttle relationship between recent life changes and nightmare content seen due to different spikes in frequency across specific contents. For Instance, a child whose parents recently divorced reports dreaming about parents fighting, being trapped in space, losing body parts, and being attacked by animals. In comparison, those who recently moved to a new house tend to dream about being slapped by a parent, losing someone, finding monsters, and being alone and lost.</em></p>
+</section>
+<section id="is-there-a-correlation-between-nightmare-frequency-and-sleeping-patterns-1" class="level5">
+<h5 class="anchored" data-anchor-id="is-there-a-correlation-between-nightmare-frequency-and-sleeping-patterns-1"><strong>Is there a correlation between nightmare frequency and sleeping patterns?</strong></h5>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>nightmare_dataset <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"nightmare_dataset.csv"</span>)</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>nightmarePanxF <span class="ot">&lt;-</span> nightmare_dataset <span class="sc">|&gt;</span> <span class="fu">filter</span>(Sleep.Patterns <span class="sc">!=</span> <span class="st">""</span> <span class="sc">&amp;</span> Nightmare.Frequency <span class="sc">!=</span> <span class="st">""</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> nightmarePanxF, <span class="at">mapping =</span> <span class="fu">aes</span>(</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">fill =</span> Nightmare.Frequency, </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> Sleep.Patterns )) <span class="sc">+</span> </span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"fill"</span>) <span class="sc">+</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Do Sleeping Patterns Influence Nightmare Frequency?"</span>,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Nightmare Frequency"</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><em>There is no clear significant difference in sleeping patterns across weekly, bi-weekly, and monthly nightmare frequencies due to the bars being roughly evenly split between consistent and irregular sleep.</em></p>
+</section>
+</section>
+<section id="discussion" class="level1">
+<h1>Discussion</h1>
+<section id="was-my-hypothesis-supported" class="level6">
+<h6 class="anchored" data-anchor-id="was-my-hypothesis-supported">Was my hypothesis supported?</h6>
+</section>
+<section id="how-frequently-do-nightmares-occur-across-different-ages-4-10-2" class="level5">
+<h5 class="anchored" data-anchor-id="how-frequently-do-nightmares-occur-across-different-ages-4-10-2"><strong>How frequently do nightmares occur across different ages (4-10)?</strong></h5>
+<p>My initial hypothesis was not supported. I predicted that children over the age of 7 would have nightmares more frequently than those under the age of 6; however, the data proved that nightmares are more common among children aged 4-5 and less common as they reach the age of 7. This has shifted my way of thinking, making me believe in my hypothesis less due to the clear proof that nightmare frequency decreases as children age.</p>
+</section>
+<section id="are-gender-differences-in-nightmare-frequency-linked-to-psychological-stress-in-school-2" class="level5">
+<h5 class="anchored" data-anchor-id="are-gender-differences-in-nightmare-frequency-linked-to-psychological-stress-in-school-2">Are gender differences in nightmare frequency linked to psychological stress in school<strong>?</strong></h5>
+<p>My initial hypothesis was not supported. I predicted that there wouldn’t be a difference in nightmare frequency between boys and girls, and in psychological challenges at school, due to the young age of the children. However, the data depicted how, compared to boys, girls had nightmares more frequently when approaching level 35 of the psychological problems at school scale, showing stress-related nightmares. Due to these findings, there has been a change in my belief. Now I agree that there is a clear difference between the nightmare frequency and psychological stress levels experienced by boys and girls.</p>
+</section>
+<section id="is-there-a-relationship-between-recent-life-changes-and-nightmare-content-2" class="level5">
+<h5 class="anchored" data-anchor-id="is-there-a-relationship-between-recent-life-changes-and-nightmare-content-2"><strong>Is there a relationship between recent life changes and nightmare content?</strong></h5>
+<p>My initial hypothesis was supported. Initially, I predicted that because of the potentially traumatic and vivid emotional stress caused by some of the children’s experiences, they may dream about specific contents in a consistent pattern. To give a clear example, I predicted that those who experience their parents’ divorce may dream about losing someone, and those who experience moving houses may dream about being alone and lost. Similarly, the figure described how a child whose parents recently divorced reports dreaming about parents fighting, being trapped in space, losing body parts, and being attacked by animals. In comparison, those who recently moved to a new house tend to dream about being slapped by a parent, losing someone, finding monsters, and being alone and lost.</p>
+</section>
+<section id="is-there-a-correlation-between-nightmare-frequency-and-sleeping-patterns-2" class="level5">
+<h5 class="anchored" data-anchor-id="is-there-a-correlation-between-nightmare-frequency-and-sleeping-patterns-2"><strong>Is there a correlation between nightmare frequency and sleeping patterns?</strong></h5>
+<p>My Initial hypothesis was not supported by the figure. I predicted that children with irregular sleep schedules would experience nightmares more frequently than those who have a consistent sleeping schedule. However, the figure shows that there is no clear significant difference in sleeping patterns across weekly, bi-weekly, and monthly nightmare frequencies. There has been no change in my initial belief, just because I don’t think it makes sense that inconsistent sleeping doesn’t affect the frequency of nightmares.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

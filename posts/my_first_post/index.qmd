@@ -1,38 +1,149 @@
 ---
-title: "Nightmare patterns in kids ages 4-10"
+title: "Nightmare patterns in Children"
 author: "Valeria Hernandez-Lozano"
 date: "2025-08-06"
 categories: [data_science_sample_project]
 ---
 
-![](/images/nightmares.jpg){width="215" height="20"}
+![](/images/nightmareSleeping.jpg){fig-align="center"}
 
-Are children's nightmares a reflection of their real life and psychological experiences or is their brain playing games. In this project I analyzed a data set that includes variables such as age, gender, nightmare frequency and content, sleep patterns, recent life changes, parental observations, psychological issues at school and other factor that showcase the correlation and reasoning behind children nightmares between the ages 4-10.
+Nightmares are common phenomena that occur in early childhood. They are described as vivid and disturbing dreams that occur during the Rapid Eye Movement (REM) stage of sleep. It is often implied that these serve as an opening into a child's creativity and thought process, as well as their emotional and psychological development.
 
-# Questions + Predictions:
+In this project, I analyzed a data set in order to reveal the correlations and causes of nightmares in children aged 4 to 10. It is important to analyze this data to be aware of the psychological well-being of children during this early age of their development.
 
-1.  **How frequently do nightmares occur among different age groups?**
+# **Research Questions & Hypothesis**
 
-    *I predict that kids who are older (\>7) will experience nightmares more frequently than those who are younger (\<6).*
+##### **How frequently do nightmares occur across different ages (4-10)?**
 
-2.  **Is there a difference in nightmare frequency between Males and Females, does this difference have anything to do with Psychological pressure/ issues at school?**
+***Hypothesis**:* Children over the age of 7 will experience nightmares more frequently than those under the age of 6, due to increased cognitive awareness, understanding, and emotional development.
 
-    *I predict that there wont be a significant difference in nightmare frequency between genders and therefore not much of a difference in psychological problems at school.*
+##### Are gender differences in nightmare frequency linked to psychological stress in school**?**
 
-3.  Is there a correlation between nightmare frequency, and sleeping patterns?
+***Hypothesis**:* There won't be a significant difference in both nightmare frequency between boys and girls, and in psychological challenges at school, due to the young age of the individuals.
 
-4.  Is there a correlation between nightmare frequency, content and recent life changes?
+##### **Is there a relationship between recent life changes and nightmare content?**
 
-5.  Is there a correlation between sleeping environment and nightmare content?
+***Hypothesis**:* Recent life events may cause stress or intense emotional and potentially traumatic responses, which may influence the emotional themes and content of their dreams. Specifically, I predict that those who experience their parents' divorce may dream about losing someone, and those who experience moving houses may dream about being alone and lost.
 
-6.  How does the severity of psychological issues experianced bt the child impact the severity/content of their dream?
+##### **Is there a correlation between nightmare frequency and sleeping patterns?**
+
+***Hypothesis**:* Children with irregular sleep schedules will experience nightmares more frequently, particularly on a weekly basis, due to a loss of emotional processing during REM sleep.
 
 # Approach
 
+The data set used in this analysis investigates the nightmares experienced by children aged 4 to 10 and their potential psychological effects. It was published by Atif Masih, a lecturer at Govt Islamia Graduate College, and was last updated in 2024. The data set has 12 variables (columns). These include 8 whose data is collected categorically: Age, Gender, Nightmare Frequency, Nightmare Content, Sleep Patterns, recent life changes, Sleep Environment, Parental observations, and 4 whose data is collected numerically: Psychological issues at school, Has Recent life Changes, Irregular Sleep Pattern, and Fear-Related Nightmares and there are a total of 20,000 participants ages 4-10.
+
 # Tools
 
-# Predictions
+This analysis was conducted using **RStudio** in **Posit.Cloud; GitHub** and **R**, a programming language used for analysis, data visualization, and modeling. The data set was imported using the **readr** package and the **read.csv()** function, allowing access to the data set stored in CSV format.
+
+To manipulate and visualize the data, I used packages from the **tidyverse**, such as **ggplot2,** for creating visualizations. The analysis included density plots, histograms, and bar charts, and data cleaning was conducted by filtering out N/A and Blank/Incomplete data using conditions like **!is.na() and != ""**.
+
+Visual differences between my variables were made using **color** and **fill** aesthetics, and in certain graphs, I applied **facet_wrap()** to split plots into separate groups, allowing for a better comparison between specific conditions. Finally, to enhance the overall appearance of the plots, I included themes, titles, and appropriate x and y-axis names using **labs() and theme\_().**
 
 # Results
 
-# Disscussion
+##### **How frequently do nightmares occur across different ages (4-10)?**
+
+```{r}
+library(readr)
+library(ggplot2)
+library(tidyverse)
+nightmare_dataset <- read.csv("nightmare_dataset.csv")
+
+
+nightmare <- nightmare_dataset |> filter(!is.na(Age))
+nightmare <- nightmare_dataset |> filter(Age <= 10 & Nightmare.Frequency != "")
+
+
+ggplot(nightmare, aes(
+  x = Age, color = Nightmare.Frequency, 
+  fill = Nightmare.Frequency)) + 
+  geom_density(alpha = 0.5) + labs(
+    title = "Nightmare Frequency In Children Ages (4-10)",
+    x = "Age (4-10)")
+  
+```
+
+*Weekly nightmares are most common among children aged 4-5, while monthly and bi-weekly nightmares become more common between the ages of 7-10. This suggests that nightmares are less common as children grow older.*
+
+##### Are gender differences in nightmare frequency linked to psychological stress in school**?**
+
+```{r}
+library(readr)
+library(ggplot2)
+nightmare_dataset <- read.csv("nightmare_dataset.csv")
+
+nightmareGen <- nightmare_dataset |> filter(Nightmare.Frequency != "" & Gender != "")
+
+ggplot(data = nightmareGen , 
+  mapping = aes(x = Psychological.Problems.at.School)) + 
+  geom_histogram(aes(color = Nightmare.Frequency)) + 
+  facet_wrap(~Gender) + labs(
+    title = "Nightmare Frequency Vs. Psychological Problems at school in Boys and Girls", x = "Psychological Problems at School Scale (1-35)"
+  ) + theme_minimal()
+```
+
+*Girls with higher Psychological problems at school show a higher count of weekly nightmares. In comparison, boys show a less notable change across the scale with a huge decrease in nightmares when approaching level 35.*
+
+*In terms of monthly nightmares, both genders show similar patterns across the scale, with girls showing a higher count when approaching level 35 than boys.*
+
+##### **Is there a relationship between recent life changes and nightmare content?**
+
+```{r}
+library(readr)
+nightmare_dataset <- read.csv("nightmare_dataset.csv")
+
+
+nightmare_dataset_filtered <- nightmare_dataset |> filter(Recent.Life.Changes != "")
+ 
+ggplot(data = nightmare_dataset_filtered, mapping = aes(
+  y = Recent.Life.Changes, 
+  fill = Nightmare.Content )) + 
+  geom_bar(position = "fill") + 
+  labs(
+    title = "Recent Life Changes vs. Nightmare Content", 
+    y = "Recent Life Changes") 
+```
+
+*There is a suttle relationship between recent life changes and nightmare content seen due to different spikes in frequency across specific contents. For Instance, a child whose parents recently divorced reports dreaming about parents fighting, being trapped in space, losing body parts, and being attacked by animals. In comparison, those who recently moved to a new house tend to dream about being slapped by a parent, losing someone, finding monsters, and being alone and lost.*
+
+##### **Is there a correlation between nightmare frequency and sleeping patterns?**
+
+```{r}
+library(readr)
+nightmare_dataset <- read.csv("nightmare_dataset.csv")
+
+nightmarePanxF <- nightmare_dataset |> filter(Sleep.Patterns != "" & Nightmare.Frequency != "")
+
+ggplot(data = nightmarePanxF, mapping = aes(
+  fill = Nightmare.Frequency, 
+  x = Sleep.Patterns )) + 
+  geom_bar(position = "fill") +
+  labs(
+    title = "Do Sleeping Patterns Influence Nightmare Frequency?",
+    y = "Nightmare Frequency"
+  )
+```
+
+*There is no clear significant difference in sleeping patterns across weekly, bi-weekly, and monthly nightmare frequencies due to the bars being roughly evenly split between consistent and irregular sleep.*
+
+# Discussion
+
+###### Was my hypothesis supported?
+
+##### **How frequently do nightmares occur across different ages (4-10)?**
+
+My initial hypothesis was not supported. I predicted that children over the age of 7 would have nightmares more frequently than those under the age of 6; however, the data proved that nightmares are more common among children aged 4-5 and less common as they reach the age of 7. This has shifted my way of thinking, making me believe in my hypothesis less due to the clear proof that nightmare frequency decreases as children age.
+
+##### Are gender differences in nightmare frequency linked to psychological stress in school**?**
+
+My initial hypothesis was not supported. I predicted that there wouldn't be a difference in nightmare frequency between boys and girls, and in psychological challenges at school, due to the young age of the children. However, the data depicted how, compared to boys, girls had nightmares more frequently when approaching level 35 of the psychological problems at school scale, showing stress-related nightmares. Due to these findings, there has been a change in my belief. Now I agree that there is a clear difference between the nightmare frequency and psychological stress levels experienced by boys and girls.
+
+##### **Is there a relationship between recent life changes and nightmare content?**
+
+My initial hypothesis was supported. Initially, I predicted that because of the potentially traumatic and vivid emotional stress caused by some of the children's experiences, they may dream about specific contents in a consistent pattern. To give a clear example, I predicted that those who experience their parents' divorce may dream about losing someone, and those who experience moving houses may dream about being alone and lost. Similarly, the figure described how a child whose parents recently divorced reports dreaming about parents fighting, being trapped in space, losing body parts, and being attacked by animals. In comparison, those who recently moved to a new house tend to dream about being slapped by a parent, losing someone, finding monsters, and being alone and lost.
+
+##### **Is there a correlation between nightmare frequency and sleeping patterns?**
+
+My Initial hypothesis was not supported by the figure. I predicted that children with irregular sleep schedules would experience nightmares more frequently than those who have a consistent sleeping schedule. However, the figure shows that there is no clear significant difference in sleeping patterns across weekly, bi-weekly, and monthly nightmare frequencies. There has been no change in my initial belief, just because I don't think it makes sense that inconsistent sleeping doesn't affect the frequency of nightmares.
