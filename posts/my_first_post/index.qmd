@@ -46,6 +46,7 @@ Visual differences between my variables were made using **color** and **fill** a
 ##### **How frequently do nightmares occur across different ages (4-10)?**
 
 ```{r}
+#| echo: false
 library(readr)
 library(ggplot2)
 library(tidyverse)
@@ -70,6 +71,7 @@ ggplot(nightmare, aes(
 ##### Are gender differences in nightmare frequency linked to psychological stress in school**?**
 
 ```{r}
+#| echo: false
 library(readr)
 library(ggplot2)
 nightmare_dataset <- read.csv("nightmare_dataset.csv")
@@ -91,6 +93,7 @@ ggplot(data = nightmareGen ,
 ##### **Is there a relationship between recent life changes and nightmare content?**
 
 ```{r}
+#| echo: false
 library(readr)
 nightmare_dataset <- read.csv("nightmare_dataset.csv")
 
@@ -111,6 +114,7 @@ ggplot(data = nightmare_dataset_filtered, mapping = aes(
 ##### **Is there a correlation between nightmare frequency and sleeping patterns?**
 
 ```{r}
+#| echo: false
 library(readr)
 nightmare_dataset <- read.csv("nightmare_dataset.csv")
 
